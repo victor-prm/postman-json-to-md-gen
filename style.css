@@ -51,6 +51,12 @@ body {
     margin: 0 auto;
 }
 
+#output{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
 .fxcol {
     display: flex;
     flex-direction: column;
