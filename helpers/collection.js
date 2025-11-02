@@ -1,7 +1,10 @@
 // Helpers to process Postman collection JSON
 
+//const jsonFile = 'Book Tracker.postman_collection.json';
+const jsonFile = 'test_collection.json';
+
 // Fetch Postman JSON file
-export async function fetchCollection(url = 'Book Tracker.postman_collection.json') {
+export async function fetchCollection(url = jsonFile) {
     const res = await fetch(url);
     return res.json();
 }
