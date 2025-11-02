@@ -1,19 +1,22 @@
 /* Functions to generate badges for markdown */
 
 // Generic badge generator
-export function mdBadge(label, color = "grey", options = {}) {
-    const { rounded = true, height = 18 } = options;
-    const style = `flat-square${rounded ? "&rounded=true" : ""}`;
-    const url = `https://img.shields.io/badge/${encodeURIComponent(label)}-${color}?style=${style}`;
-    return `<img src="${url}" alt="${label}" style="height:${height}px; vertical-align:middle; margin-right:2px;">`;
+// Generic badge generator using shields.io
+export function mdBadge(label, color = "grey") {
+    // Encode the label for URL safety
+    const badgeLabel = encodeURIComponent(label);
+    const badgeColor = encodeURIComponent(color);
+    const url = `https://img.shields.io/badge/${badgeLabel}-${badgeColor}?style=flat&logoColor=white`;
+    return `![${label}](${url})`;
 }
+
 
 // Method badges (GET, POST, etc.)
 export function mdMethod(method) {
     const colorMap = {
         GET: "mediumseagreen",
-        POST: "yellow",
-        PUT: "blue",
+        POST: "goldenrod",
+        PUT: "royalblue",
         PATCH: "plum",
         DELETE: "salmon",
         OPTIONS: "deeppink",
@@ -22,8 +25,12 @@ export function mdMethod(method) {
     return mdBadge(method, colorMap[method] || "grey");
 }
 
-// Role badges (Public, Editor, Admin)
 export function mdRoleBadge(roles) {
-    const colorMap = { Public: "mediumseagreen", Editor: "yellow", Admin: "red", "-": "grey" };
-    return roles.map(r => mdBadge(r, colorMap[r] || "grey")).join('<br>');
+    const colorMap = {
+        Public: "honeydew",
+        Editor: "beige",
+        Admin: "mistyrose",
+        "-": "lightgrey",
+    };
+    return roles.map(r => mdBadge(r, colorMap[r] || "lightgrey")).join(" ");
 }

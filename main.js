@@ -1,6 +1,6 @@
-import { fetchCollection, mdRoleForMethod, collectHeaderKeyValues } from './helpers/collection.js';
-import { mdHeading, mdLineBreaks, mdTable } from './helpers/markdown.js';
-import { mdBadge, mdMethod, mdRoleBadge } from './helpers/badges.js';
+import { fetchCollection, collectHeaderKeyValues, mdRoleForMethod } from './helpers/collection.js';
+import { mdHeading, mdLineBreaks, mdTable, mdEndpointBlock } from './helpers/markdown.js';
+import { mdBadge} from './helpers/badges.js';
 import { enableCopyButton, enableDownloadButton } from './helpers/buttons.js';
 
 let mdContent = "These docs are auto-generated from postman_collection.json. This is a homemade script, as I did not like the other json-to-md libraries I found out there.\n\n";
@@ -8,6 +8,7 @@ let mdContent = "These docs are auto-generated from postman_collection.json. Thi
 fetchCollection().then(col => {
     mdContent += mdHeading(col.info.name) + col.info.description + mdLineBreaks();
 
+    mdContent += mdHeading(`🔐 Base URL and tokens`, 2);
     // Generate table for variables + headers
     const rows = [];
     (col.variable || []).forEach(v => rows.push({
@@ -27,13 +28,12 @@ fetchCollection().then(col => {
     (col.item || []).forEach((folder, i) => {
         mdContent += mdHeading(`📁 ${i + 1}. ${folder.name} endpoint`, 2);
         mdContent += (folder.description || "") + mdLineBreaks();
-        const epRows = folder.item.map(ep => ({
-            "Method": mdMethod(ep.request.method),
-            "Description": ep.name,
-            "Endpoint": `\`${ep.request.url.raw.replace("{{base_url}}", "")}\``,
-            "Role": mdRoleBadge(mdRoleForMethod(ep.request.method))
-        }));
-        mdContent += mdTable(["Method", "Description", "Endpoint", "Role"], epRows);
+
+        folder.item.forEach((ep,i) => {
+            const roles = mdRoleForMethod(ep.request.method);
+            // Render the endpoint block directly (HTML badges will render)
+            mdContent += mdEndpointBlock(ep, roles, i) + mdLineBreaks();
+        });
     });
 
     document.querySelector("#output").innerHTML = marked.parse(mdContent);

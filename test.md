@@ -15,35 +15,151 @@ A RESTful API for managing books, authors, and genres. It allows clients to:
 
 All GET requests are publicly accessible. Modifying data is restricted based on user roles: **editor** for creating/updating and **admin** for deletion. Each resource includes hypermedia links for easy navigation between previous and next items.
 
-## 🔐 Base URL and Tokens
+## 🔐 Base URL and tokens
 
 | Type | Key | Value |
-|------|-----|-------|
-| ![VARIABLE](https://img.shields.io/badge/VARIABLE-darkslategrey?style=flat-square) | `base_url` | `http://localhost:8888/booktracker` |
-| ![HEADER](https://img.shields.io/badge/HEADER-orange?style=flat-square) | `X-Authorization` | `Bearer EDITOR_TOKEN_123` |
-| ![HEADER](https://img.shields.io/badge/HEADER-orange?style=flat-square) | `X-Authorization` | `Bearer ADMIN_TOKEN_456` |
+|---|---|---|
+| ![VARIABLE](https://img.shields.io/badge/VARIABLE-darkslategrey?style=flat&logoColor=white) | `base_url` | `http://localhost:8888/booktracker` |
+| ![HEADER](https://img.shields.io/badge/HEADER-orange?style=flat&logoColor=white) | `X-Authorization` | `Bearer EDITOR_TOKEN` |
+| ![HEADER](https://img.shields.io/badge/HEADER-orange?style=flat&logoColor=white) | `X-Authorization` | `Bearer ADMIN_TOKEN` |
 
 
 ## 📁 1. Books endpoint
 
 Manage and retrieve information about books in the API. Each book includes expandable metadata such as title, authors, main genre, subgenres, publication year, page count, reading status, frontpage image, and summary. Endpoints allow listing, fetching single books, and (for authorized users) creating, updating, or deleting books.
 
-| Method | Description | Endpoint | Role  |
-|------|--------|-------------|---------|
-| <img src="https://img.shields.io/badge/GET-mediumseagreen?style=flat-square" style="vertical-align: middle; height: 18px;"> | All Books - Paginated | `/books?offset=20&limit=3` | <img src="https://img.shields.io/badge/Public-mediumseagreen?style=flat-square&logo=&logoColor=&rounded=true" alt="Public" style="height:18px; vertical-align:middle; margin-right:2px;"> |
-| <img src="https://img.shields.io/badge/GET-mediumseagreen?style=flat-square" style="vertical-align: middle; height: 18px;"> | All Books - Expanded | `/books?expand=genres,authors,frontpage_img,year,description` | <img src="https://img.shields.io/badge/Public-mediumseagreen?style=flat-square&logo=&logoColor=&rounded=true" alt="Public" style="height:18px; vertical-align:middle; margin-right:2px;"> |
-| <img src="https://img.shields.io/badge/GET-mediumseagreen?style=flat-square" style="vertical-align: middle; height: 18px;"> | All Books - Filter | `/books?main_genre_id=11&sub_genre_id=14` | <img src="https://img.shields.io/badge/Public-mediumseagreen?style=flat-square&logo=&logoColor=&rounded=true" alt="Public" style="height:18px; vertical-align:middle; margin-right:2px;"> |
-| <img src="https://img.shields.io/badge/GET-mediumseagreen?style=flat-square" style="vertical-align: middle; height: 18px;"> | All Books - Search | `/books?q=society` | <img src="https://img.shields.io/badge/Public-mediumseagreen?style=flat-square&logo=&logoColor=&rounded=true" alt="Public" style="height:18px; vertical-align:middle; margin-right:2px;"> |
-| <img src="https://img.shields.io/badge/GET-mediumseagreen?style=flat-square" style="vertical-align: middle; height: 18px;"> | Single Book | `/books?id=9` | <img src="https://img.shields.io/badge/Public-mediumseagreen?style=flat-square&logo=&logoColor=&rounded=true" alt="Public" style="height:18px; vertical-align:middle; margin-right:2px;"> |
-| <img src="https://img.shields.io/badge/POST-yellow?style=flat-square" style="vertical-align: middle; height: 18px;"> | New Book | `/books/` | <img src="https://img.shields.io/badge/Editor-yellow?style=flat-square&logo=&logoColor=&rounded=true" alt="Editor" style="height:18px; vertical-align:middle; margin-right:2px;"><img src="https://img.shields.io/badge/Admin-red?style=flat-square&logo=&logoColor=&rounded=true" alt="Admin" style="height:18px; vertical-align:middle; margin-right:2px;"> |
-| <img src="https://img.shields.io/badge/PUT-blue?style=flat-square" style="vertical-align: middle; height: 18px;"> | Edit Book | `/books?id=74` | <img src="https://img.shields.io/badge/Editor-yellow?style=flat-square&logo=&logoColor=&rounded=true" alt="Editor" style="height:18px; vertical-align:middle; margin-right:2px;"><img src="https://img.shields.io/badge/Admin-red?style=flat-square&logo=&logoColor=&rounded=true" alt="Admin" style="height:18px; vertical-align:middle; margin-right:2px;"> |
-| <img src="https://img.shields.io/badge/DELETE-salmon?style=flat-square" style="vertical-align: middle; height: 18px;"> | Delete Book | `/books?id=74` | <img src="https://img.shields.io/badge/Admin-red?style=flat-square&logo=&logoColor=&rounded=true" alt="Admin" style="height:18px; vertical-align:middle; margin-right:2px;"> |
-| <img src="https://img.shields.io/badge/OPTIONS-deeppink?style=flat-square" style="vertical-align: middle; height: 18px;"> | All Books | `/books` | <img src="https://img.shields.io/badge/Public-mediumseagreen?style=flat-square&logo=&logoColor=&rounded=true" alt="Public" style="height:18px; vertical-align:middle; margin-right:2px;"> |
+**1. All Books - Paginated** 
+
+
+![GET](https://img.shields.io/badge/GET-mediumseagreen?style=flat&logoColor=white) `/books?offset=20&limit=3` 
+
+
+![Public](https://img.shields.io/badge/Public-honeydew?style=flat&logoColor=white)
 
 
 
 
+---
 
+
+
+**2. All Books - Expanded** 
+
+
+![GET](https://img.shields.io/badge/GET-mediumseagreen?style=flat&logoColor=white) `/books?expand=genres,authors,frontpage_img,year,description` 
+
+
+![Public](https://img.shields.io/badge/Public-honeydew?style=flat&logoColor=white)
+
+
+
+
+---
+
+
+
+**3. All Books - Filter** 
+
+
+![GET](https://img.shields.io/badge/GET-mediumseagreen?style=flat&logoColor=white) `/books?main_genre_id=11&sub_genre_id=14` 
+
+
+![Public](https://img.shields.io/badge/Public-honeydew?style=flat&logoColor=white)
+
+
+
+
+---
+
+
+
+**4. All Books - Search** 
+
+
+![GET](https://img.shields.io/badge/GET-mediumseagreen?style=flat&logoColor=white) `/books?q=society` 
+
+
+![Public](https://img.shields.io/badge/Public-honeydew?style=flat&logoColor=white)
+
+
+
+
+---
+
+
+
+**5. Single Book** 
+
+
+![GET](https://img.shields.io/badge/GET-mediumseagreen?style=flat&logoColor=white) `/books?id=9` 
+
+
+![Public](https://img.shields.io/badge/Public-honeydew?style=flat&logoColor=white)
+
+
+
+
+---
+
+
+
+**6. New Book** 
+
+
+![POST](https://img.shields.io/badge/POST-goldenrod?style=flat&logoColor=white) `/books/` 
+
+
+![Editor](https://img.shields.io/badge/Editor-beige?style=flat&logoColor=white) ![Admin](https://img.shields.io/badge/Admin-mistyrose?style=flat&logoColor=white)
+
+
+
+
+---
+
+
+
+**7. Edit Book** 
+
+
+![PUT](https://img.shields.io/badge/PUT-royalblue?style=flat&logoColor=white) `/books?id=74` 
+
+
+![Editor](https://img.shields.io/badge/Editor-beige?style=flat&logoColor=white) ![Admin](https://img.shields.io/badge/Admin-mistyrose?style=flat&logoColor=white)
+
+
+
+
+---
+
+
+
+**8. Delete Book** 
+
+
+![DELETE](https://img.shields.io/badge/DELETE-salmon?style=flat&logoColor=white) `/books?id=74` 
+
+
+![Admin](https://img.shields.io/badge/Admin-mistyrose?style=flat&logoColor=white)
+
+
+
+
+---
+
+
+
+**9. All Books** 
+
+
+![OPTIONS](https://img.shields.io/badge/OPTIONS-deeppink?style=flat&logoColor=white) `/books` 
+
+
+![Public](https://img.shields.io/badge/Public-honeydew?style=flat&logoColor=white)
+
+
+
+
+---
 
 
 
@@ -51,21 +167,123 @@ Manage and retrieve information about books in the API. Each book includes expan
 
 Manage and retrieve author information. Each author entry includes name, biography, birth year, and a list of their associated books. Endpoints allow listing all authors, fetching details for a single author, and (for authorized users) adding or updating author records.
 
-| Method | Description | Endpoint | Role  |
-|------|--------|-------------|---------|
-| <img src="https://img.shields.io/badge/GET-mediumseagreen?style=flat-square" style="vertical-align: middle; height: 18px;"> | All Authors - Paginated | `/authors` | <img src="https://img.shields.io/badge/Public-mediumseagreen?style=flat-square&logo=&logoColor=&rounded=true" alt="Public" style="height:18px; vertical-align:middle; margin-right:2px;"> |
-| <img src="https://img.shields.io/badge/GET-mediumseagreen?style=flat-square" style="vertical-align: middle; height: 18px;"> | All Authors - Filter | `/authors?birth_year=1892` | <img src="https://img.shields.io/badge/Public-mediumseagreen?style=flat-square&logo=&logoColor=&rounded=true" alt="Public" style="height:18px; vertical-align:middle; margin-right:2px;"> |
-| <img src="https://img.shields.io/badge/GET-mediumseagreen?style=flat-square" style="vertical-align: middle; height: 18px;"> | All Authors - Search | `/authors?q=her` | <img src="https://img.shields.io/badge/Public-mediumseagreen?style=flat-square&logo=&logoColor=&rounded=true" alt="Public" style="height:18px; vertical-align:middle; margin-right:2px;"> |
-| <img src="https://img.shields.io/badge/GET-mediumseagreen?style=flat-square" style="vertical-align: middle; height: 18px;"> | Single Author | `/authors?id=4` | <img src="https://img.shields.io/badge/Public-mediumseagreen?style=flat-square&logo=&logoColor=&rounded=true" alt="Public" style="height:18px; vertical-align:middle; margin-right:2px;"> |
-| <img src="https://img.shields.io/badge/POST-yellow?style=flat-square" style="vertical-align: middle; height: 18px;"> | New Author | `/authors/` | <img src="https://img.shields.io/badge/Editor-yellow?style=flat-square&logo=&logoColor=&rounded=true" alt="Editor" style="height:18px; vertical-align:middle; margin-right:2px;"><img src="https://img.shields.io/badge/Admin-red?style=flat-square&logo=&logoColor=&rounded=true" alt="Admin" style="height:18px; vertical-align:middle; margin-right:2px;"> |
-| <img src="https://img.shields.io/badge/PUT-blue?style=flat-square" style="vertical-align: middle; height: 18px;"> | Edit Author | `/authors?id=71` | <img src="https://img.shields.io/badge/Editor-yellow?style=flat-square&logo=&logoColor=&rounded=true" alt="Editor" style="height:18px; vertical-align:middle; margin-right:2px;"><img src="https://img.shields.io/badge/Admin-red?style=flat-square&logo=&logoColor=&rounded=true" alt="Admin" style="height:18px; vertical-align:middle; margin-right:2px;"> |
-| <img src="https://img.shields.io/badge/DELETE-salmon?style=flat-square" style="vertical-align: middle; height: 18px;"> | Delete Author | `/authors?id=71` | <img src="https://img.shields.io/badge/Admin-red?style=flat-square&logo=&logoColor=&rounded=true" alt="Admin" style="height:18px; vertical-align:middle; margin-right:2px;"> |
-| <img src="https://img.shields.io/badge/OPTIONS-deeppink?style=flat-square" style="vertical-align: middle; height: 18px;"> | All Authors | `/authors` | <img src="https://img.shields.io/badge/Public-mediumseagreen?style=flat-square&logo=&logoColor=&rounded=true" alt="Public" style="height:18px; vertical-align:middle; margin-right:2px;"> |
+**1. All Authors - Paginated** 
+
+
+![GET](https://img.shields.io/badge/GET-mediumseagreen?style=flat&logoColor=white) `/authors` 
+
+
+![Public](https://img.shields.io/badge/Public-honeydew?style=flat&logoColor=white)
 
 
 
 
+---
 
+
+
+**2. All Authors - Filter** 
+
+
+![GET](https://img.shields.io/badge/GET-mediumseagreen?style=flat&logoColor=white) `/authors?birth_year=1892` 
+
+
+![Public](https://img.shields.io/badge/Public-honeydew?style=flat&logoColor=white)
+
+
+
+
+---
+
+
+
+**3. All Authors - Search** 
+
+
+![GET](https://img.shields.io/badge/GET-mediumseagreen?style=flat&logoColor=white) `/authors?q=her` 
+
+
+![Public](https://img.shields.io/badge/Public-honeydew?style=flat&logoColor=white)
+
+
+
+
+---
+
+
+
+**4. Single Author** 
+
+
+![GET](https://img.shields.io/badge/GET-mediumseagreen?style=flat&logoColor=white) `/authors?id=4` 
+
+
+![Public](https://img.shields.io/badge/Public-honeydew?style=flat&logoColor=white)
+
+
+
+
+---
+
+
+
+**5. New Author** 
+
+
+![POST](https://img.shields.io/badge/POST-goldenrod?style=flat&logoColor=white) `/authors/` 
+
+
+![Editor](https://img.shields.io/badge/Editor-beige?style=flat&logoColor=white) ![Admin](https://img.shields.io/badge/Admin-mistyrose?style=flat&logoColor=white)
+
+
+
+
+---
+
+
+
+**6. Edit Author** 
+
+
+![PUT](https://img.shields.io/badge/PUT-royalblue?style=flat&logoColor=white) `/authors?id=71` 
+
+
+![Editor](https://img.shields.io/badge/Editor-beige?style=flat&logoColor=white) ![Admin](https://img.shields.io/badge/Admin-mistyrose?style=flat&logoColor=white)
+
+
+
+
+---
+
+
+
+**7. Delete Author** 
+
+
+![DELETE](https://img.shields.io/badge/DELETE-salmon?style=flat&logoColor=white) `/authors?id=71` 
+
+
+![Admin](https://img.shields.io/badge/Admin-mistyrose?style=flat&logoColor=white)
+
+
+
+
+---
+
+
+
+**8. All Authors** 
+
+
+![OPTIONS](https://img.shields.io/badge/OPTIONS-deeppink?style=flat&logoColor=white) `/authors` 
+
+
+![Public](https://img.shields.io/badge/Public-honeydew?style=flat&logoColor=white)
+
+
+
+
+---
 
 
 
@@ -73,16 +291,48 @@ Manage and retrieve author information. Each author entry includes name, biograp
 
 Manage and retrieve genre information for books. Each genre includes its name and a list of books associated with it, either as main genre or subgenre. Endpoints allow listing all genres, fetching details for a single genre, and browsing books by genre.
 
-| Method | Description | Endpoint | Role  |
-|------|--------|-------------|---------|
-| <img src="https://img.shields.io/badge/GET-mediumseagreen?style=flat-square" style="vertical-align: middle; height: 18px;"> | All Genres - Paginated | `/genres` | <img src="https://img.shields.io/badge/Public-mediumseagreen?style=flat-square&logo=&logoColor=&rounded=true" alt="Public" style="height:18px; vertical-align:middle; margin-right:2px;"> |
-| <img src="https://img.shields.io/badge/GET-mediumseagreen?style=flat-square" style="vertical-align: middle; height: 18px;"> | Single Genre | `/genres?id=5` | <img src="https://img.shields.io/badge/Public-mediumseagreen?style=flat-square&logo=&logoColor=&rounded=true" alt="Public" style="height:18px; vertical-align:middle; margin-right:2px;"> |
-| <img src="https://img.shields.io/badge/OPTIONS-deeppink?style=flat-square" style="vertical-align: middle; height: 18px;"> | All Genres | `/genres` | <img src="https://img.shields.io/badge/Public-mediumseagreen?style=flat-square&logo=&logoColor=&rounded=true" alt="Public" style="height:18px; vertical-align:middle; margin-right:2px;"> |
+**1. All Genres - Paginated** 
+
+
+![GET](https://img.shields.io/badge/GET-mediumseagreen?style=flat&logoColor=white) `/genres` 
+
+
+![Public](https://img.shields.io/badge/Public-honeydew?style=flat&logoColor=white)
 
 
 
 
+---
 
+
+
+**2. Single Genre** 
+
+
+![GET](https://img.shields.io/badge/GET-mediumseagreen?style=flat&logoColor=white) `/genres?id=5` 
+
+
+![Public](https://img.shields.io/badge/Public-honeydew?style=flat&logoColor=white)
+
+
+
+
+---
+
+
+
+**3. All Genres** 
+
+
+![OPTIONS](https://img.shields.io/badge/OPTIONS-deeppink?style=flat&logoColor=white) `/genres` 
+
+
+![Public](https://img.shields.io/badge/Public-honeydew?style=flat&logoColor=white)
+
+
+
+
+---
 
 
 
