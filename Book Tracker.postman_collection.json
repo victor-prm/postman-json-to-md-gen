@@ -18,13 +18,13 @@
 						"header": [
 							{
 								"key": "X-Authorization",
-								"value": "Bearer EDITOR_TOKEN_123",
+								"value": "Bearer EDITOR_TOKEN",
 								"type": "text",
 								"disabled": true
 							},
 							{
 								"key": "X-Authorization",
-								"value": "Bearer ADMIN_TOKEN_456",
+								"value": "Bearer ADMIN_TOKEN",
 								"type": "text",
 								"disabled": true
 							}
@@ -58,13 +58,13 @@
 						"header": [
 							{
 								"key": "X-Authorization",
-								"value": "Bearer EDITOR_TOKEN_123",
+								"value": "Bearer EDITOR_TOKEN",
 								"type": "text",
 								"disabled": true
 							},
 							{
 								"key": "X-Authorization",
-								"value": "Bearer ADMIN_TOKEN_456",
+								"value": "Bearer ADMIN_TOKEN",
 								"type": "text",
 								"disabled": true
 							}
@@ -94,13 +94,13 @@
 						"header": [
 							{
 								"key": "X-Authorization",
-								"value": "Bearer EDITOR_TOKEN_123",
+								"value": "Bearer EDITOR_TOKEN",
 								"type": "text",
 								"disabled": true
 							},
 							{
 								"key": "X-Authorization",
-								"value": "Bearer ADMIN_TOKEN_456",
+								"value": "Bearer ADMIN_TOKEN",
 								"type": "text",
 								"disabled": true
 							}
@@ -134,13 +134,13 @@
 						"header": [
 							{
 								"key": "X-Authorization",
-								"value": "Bearer EDITOR_TOKEN_123",
+								"value": "Bearer EDITOR_TOKEN",
 								"type": "text",
 								"disabled": true
 							},
 							{
 								"key": "X-Authorization",
-								"value": "Bearer ADMIN_TOKEN_456",
+								"value": "Bearer ADMIN_TOKEN",
 								"type": "text",
 								"disabled": true
 							}
@@ -173,13 +173,13 @@
 						"header": [
 							{
 								"key": "X-Authorization",
-								"value": "Bearer EDITOR_TOKEN_123",
+								"value": "Bearer EDITOR_TOKEN",
 								"type": "text",
 								"disabled": true
 							},
 							{
 								"key": "X-Authorization",
-								"value": "Bearer ADMIN_TOKEN_456",
+								"value": "Bearer ADMIN_TOKEN",
 								"type": "text",
 								"disabled": true
 							}
@@ -212,12 +212,12 @@
 						"header": [
 							{
 								"key": "X-Authorization",
-								"value": "Bearer EDITOR_TOKEN_123",
+								"value": "Bearer EDITOR_TOKEN",
 								"type": "text"
 							},
 							{
 								"key": "X-Authorization",
-								"value": "Bearer ADMIN_TOKEN_456",
+								"value": "Bearer ADMIN_TOKEN",
 								"type": "text",
 								"disabled": true
 							}
@@ -300,12 +300,12 @@
 						"header": [
 							{
 								"key": "X-Authorization",
-								"value": "Bearer EDITOR_TOKEN_123",
+								"value": "Bearer EDITOR_TOKEN",
 								"type": "text"
 							},
 							{
 								"key": "X-Authorization",
-								"value": "Bearer ADMIN_TOKEN_456",
+								"value": "Bearer ADMIN_TOKEN",
 								"type": "text",
 								"disabled": true
 							}
@@ -393,13 +393,13 @@
 						"header": [
 							{
 								"key": "X-Authorization",
-								"value": "Bearer EDITOR_TOKEN_123",
+								"value": "Bearer EDITOR_TOKEN",
 								"type": "text",
 								"disabled": true
 							},
 							{
 								"key": "X-Authorization",
-								"value": "Bearer ADMIN_TOKEN_456",
+								"value": "Bearer ADMIN_TOKEN",
 								"type": "text"
 							}
 						],
@@ -431,12 +431,12 @@
 						"header": [
 							{
 								"key": "X-Authorization",
-								"value": "Bearer EDITOR_TOKEN_123",
+								"value": "Bearer EDITOR_TOKEN",
 								"type": "text"
 							},
 							{
 								"key": "X-Authorization",
-								"value": "Bearer ADMIN_TOKEN_456",
+								"value": "Bearer ADMIN_TOKEN",
 								"type": "text",
 								"disabled": true
 							}
@@ -466,13 +466,13 @@
 						"header": [
 							{
 								"key": "X-Authorization",
-								"value": "Bearer EDITOR_TOKEN_123",
+								"value": "Bearer EDITOR_TOKEN",
 								"type": "text",
 								"disabled": true
 							},
 							{
 								"key": "X-Authorization",
-								"value": "Bearer ADMIN_TOKEN_456",
+								"value": "Bearer ADMIN_TOKEN",
 								"type": "text",
 								"disabled": true
 							}
@@ -496,13 +496,13 @@
 						"header": [
 							{
 								"key": "X-Authorization",
-								"value": "Bearer EDITOR_TOKEN_123",
+								"value": "Bearer EDITOR_TOKEN",
 								"type": "text",
 								"disabled": true
 							},
 							{
 								"key": "X-Authorization",
-								"value": "Bearer ADMIN_TOKEN_456",
+								"value": "Bearer ADMIN_TOKEN",
 								"type": "text",
 								"disabled": true
 							}
@@ -532,13 +532,13 @@
 						"header": [
 							{
 								"key": "X-Authorization",
-								"value": "Bearer EDITOR_TOKEN_123",
+								"value": "Bearer EDITOR_TOKEN",
 								"type": "text",
 								"disabled": true
 							},
 							{
 								"key": "X-Authorization",
-								"value": "Bearer ADMIN_TOKEN_456",
+								"value": "Bearer ADMIN_TOKEN",
 								"type": "text",
 								"disabled": true
 							}
@@ -568,13 +568,13 @@
 						"header": [
 							{
 								"key": "X-Authorization",
-								"value": "Bearer EDITOR_TOKEN_123",
+								"value": "Bearer EDITOR_TOKEN",
 								"type": "text",
 								"disabled": true
 							},
 							{
 								"key": "X-Authorization",
-								"value": "Bearer ADMIN_TOKEN_456",
+								"value": "Bearer ADMIN_TOKEN",
 								"type": "text",
 								"disabled": true
 							}
@@ -607,12 +607,12 @@
 						"header": [
 							{
 								"key": "X-Authorization",
-								"value": "Bearer EDITOR_TOKEN_123",
+								"value": "Bearer EDITOR_TOKEN",
 								"type": "text"
 							},
 							{
 								"key": "X-Authorization",
-								"value": "Bearer ADMIN_TOKEN_456",
+								"value": "Bearer ADMIN_TOKEN",
 								"type": "text",
 								"disabled": true
 							}
@@ -660,12 +660,12 @@
 						"header": [
 							{
 								"key": "X-Authorization",
-								"value": "Bearer EDITOR_TOKEN_123",
+								"value": "Bearer EDITOR_TOKEN",
 								"type": "text"
 							},
 							{
 								"key": "X-Authorization",
-								"value": "Bearer ADMIN_TOKEN_456",
+								"value": "Bearer ADMIN_TOKEN",
 								"type": "text",
 								"disabled": true
 							}
@@ -718,13 +718,13 @@
 						"header": [
 							{
 								"key": "X-Authorization",
-								"value": "Bearer EDITOR_TOKEN_123",
+								"value": "Bearer EDITOR_TOKEN",
 								"type": "text",
 								"disabled": true
 							},
 							{
 								"key": "X-Authorization",
-								"value": "Bearer ADMIN_TOKEN_456",
+								"value": "Bearer ADMIN_TOKEN",
 								"type": "text"
 							}
 						],
@@ -756,13 +756,13 @@
 						"header": [
 							{
 								"key": "X-Authorization",
-								"value": "Bearer EDITOR_TOKEN_123",
+								"value": "Bearer EDITOR_TOKEN",
 								"type": "text",
 								"disabled": true
 							},
 							{
 								"key": "X-Authorization",
-								"value": "Bearer ADMIN_TOKEN_456",
+								"value": "Bearer ADMIN_TOKEN",
 								"type": "text"
 							}
 						],
@@ -791,13 +791,13 @@
 						"header": [
 							{
 								"key": "X-Authorization",
-								"value": "Bearer EDITOR_TOKEN_123",
+								"value": "Bearer EDITOR_TOKEN",
 								"type": "text",
 								"disabled": true
 							},
 							{
 								"key": "X-Authorization",
-								"value": "Bearer ADMIN_TOKEN_456",
+								"value": "Bearer ADMIN_TOKEN",
 								"type": "text",
 								"disabled": true
 							}
@@ -821,13 +821,13 @@
 						"header": [
 							{
 								"key": "X-Authorization",
-								"value": "Bearer EDITOR_TOKEN_123",
+								"value": "Bearer EDITOR_TOKEN",
 								"type": "text",
 								"disabled": true
 							},
 							{
 								"key": "X-Authorization",
-								"value": "Bearer ADMIN_TOKEN_456",
+								"value": "Bearer ADMIN_TOKEN",
 								"type": "text",
 								"disabled": true
 							}
@@ -860,12 +860,12 @@
 						"header": [
 							{
 								"key": "X-Authorization",
-								"value": "Bearer EDITOR_TOKEN_123",
+								"value": "Bearer EDITOR_TOKEN",
 								"type": "text"
 							},
 							{
 								"key": "X-Authorization",
-								"value": "Bearer ADMIN_TOKEN_456",
+								"value": "Bearer ADMIN_TOKEN",
 								"type": "text",
 								"disabled": true
 							}

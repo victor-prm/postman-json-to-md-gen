@@ -23,8 +23,31 @@ th{
     text-align: left;
 }
 
+button{
+    padding: 0.5rem 1rem;
+    border-radius: 100vw;
+    background-color: mediumseagreen;
+    border: none;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
 #output{
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+
+    background-color: whitesmoke;
+    margin-bottom: 6rem;
+}
+
+.md-header{
+    display: flex;
+    margin-bottom: 1rem;
 }
